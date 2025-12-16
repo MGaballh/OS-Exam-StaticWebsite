@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout code to execute
         uses: actions/checkout@v4
 
       - name: login to dockerHub
