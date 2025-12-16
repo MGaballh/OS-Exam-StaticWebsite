@@ -10,11 +10,12 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+
       - name: login to dockerHub
         run: docker login --username ${{secrets.DOCKER_USERNAME}} --password ${{secrets.DOCKER_PASSWORD}}
 
       - name: Build Docker Image
-        run: docker build -t ${{secrets.DOCKER_USERNAME}}/mohamed_reda_shaban .
+        run: docker build -t ${{ secrets.DOCKER_USERNAME }}/mohamed_reda_shaban ./staticwebsite
 
       - name: Pushing to DockerHub
         run: docker push ${{secrets.DOCKER_USERNAME}}/mohamed_reda_shaban
